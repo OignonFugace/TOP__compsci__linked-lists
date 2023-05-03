@@ -4,6 +4,11 @@ class LinkedList {
         this.tail = null;
     }
 
+
+    /**
+    * Appends a new node with the given value to the end of the list.
+    * @param {*} value - The value to be stored in the new node.
+    */
     append(value) {
         const node = new Node(value);
         if (!this.head) {
@@ -19,6 +24,11 @@ class LinkedList {
         }
     }
 
+
+    /**
+    * Prepends a new node with the given value to the beginning of the list.
+    * @param {*} value - The value to be stored in the new node.
+    */
     prepend(value) {
         const node = new Node(value);
         if (!this.head) {
@@ -30,6 +40,11 @@ class LinkedList {
         }
     }
 
+
+    /**
+    * Returns the number of nodes in the list.
+    * @returns {number} - The size of the list.
+    */
     get size() {
         if (!this.head) return 0;
 
@@ -42,10 +57,20 @@ class LinkedList {
         return size;
     }
 
+
+    /**
+    * Returns the head node of the list.
+    * @returns {Node|null} - The head node of the list, or null if the list is empty.
+    */
     getHead() {
         return this.head;
     }
 
+
+    /**
+    * Returns the tail node of the list.
+    * @returns {Node|null} - The tail node of the list, or null if the list is empty.
+    */
     getTail() {
         if (!this.head) return null;
         let pointer = this.head;
@@ -55,6 +80,12 @@ class LinkedList {
         return pointer;
     }
 
+
+    /**
+    * Returns the value stored at the specified index in the list.
+    * @param {number} index - The index of the node whose value is to be retrieved.
+    * @returns {*|null} - The value stored at the specified index, or null if the index is invalid.
+    */
     at(index) {
         if (!this.head) return null;
 
@@ -68,6 +99,11 @@ class LinkedList {
         return null;
     }
 
+
+    /**
+    * Removes the last node from the list and returns its value.
+    * @returns {*|null} - The value of the removed node, or null if the list is empty.
+    */
     pop() {
         if (!this.head) return null;
 
@@ -86,6 +122,12 @@ class LinkedList {
         return popedValue;
     }
 
+
+    /**
+    * Checks if the list contains a node with the specified value.
+    * @param {*} value - The value to search for in the list.
+    * @returns {boolean} - True if the list contains a node with the specified value, false otherwise.
+    */
     contains(value) {
         if (!this.head) return false;
 
@@ -97,6 +139,12 @@ class LinkedList {
         return false;
     }
 
+
+    /**
+    * Returns the index of the first node with the specified value in the list.
+    * @param {*} value - The value to search for in the list.
+    * @returns {number} - The index of the first node with the specified value, or -1 if the value is not found.
+    */
     find(value) {
         if (!this.head) return -1;
 
@@ -110,6 +158,11 @@ class LinkedList {
         return -1;
     }
 
+
+    /**
+    * Returns a string representation of the list.
+    * @returns {string} - A string representation of the list.
+    */
     tostring() {
         if (!this.head) return 'null';
 
@@ -123,6 +176,12 @@ class LinkedList {
         return result;
     }
 
+
+    /**
+    * Inserts a new node with the given value at the specified index in the list.
+    * @param {*} value - The value to be stored in the new node.
+    * @param {number} index - The index at which the new node should be inserted.
+    */
     insertAt(value, index) {
         if (index < 0 || index > this.size) {
             console.log("Invalid index");
@@ -155,6 +214,11 @@ class LinkedList {
         pointer.nextNode = node;
     }
 
+
+    /**
+    * Removes the node at the specified index from the list.
+    * @param {number} index - The index of the node to remove.
+    */
     removeAt(index) {
         if (index < 0 || index > this.size - 1) {
             console.log("Invalid index");
